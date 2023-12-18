@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Forecaster</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mainBody" id="mainBodyForBackground">
+  <h1 class="Forecaster">Forecaster</h1>
+  <div class="dashboardWithNavbar">
+    <!-- Navbar -->
+    <div style="width: 100%;" class="holeNavbar">
+      <div class="navbarContent">
+        <p class='exchangeingButton' id="Historical">Historical</p>
+        <p class='exchangeingButton' id="Forecast">Forecast</p>
+        <p>||</p>
+        <p class='exchangeingButtonMood' id="dark">Dark</p>
+        <p class='exchangeingButtonMood' id="light">Light</p>
+      </div>
+      
+
+      
+      <div style="width: 100%; display: flex; justify-content: center;">
+        <div class="custom-select">
+          <select id="filterElement">
+            <option value="solidFuels">Filter: All</option>
+            <option value="solidFuels">Solid Fuels</option>
+            <option value="gas">Gas</option>
+            <option value="electricity">Electricity</option>
+            <option value="liquidFuels">Liquid Fuels</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="max-width: 800px; width: 800px;">
+          <div class="theChartParent" id="chartsContainer">
+            <canvas id="myChart"></canvas>
+            <!-- Chart will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <p>OOPS! Sorry, Can not scroll right now</p>
+      <button id="acknowledgeBtn" class="okButton">Ok</button>
+    </div>
+  </div>
+
+  <div id="myModalChartView" class="modal">
+    <div class="modal-content">
+      <p>Switched to another mood.</p>
+      <button id="acknowledgeBtnchartView" class="okButton">Ok</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
